@@ -8,10 +8,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lerp0 : MonoBehaviour
+public class Lerp : MonoBehaviour
 {
     GameObject[] spheres;
-    static int numSphere = 200; 
+    static int numSphere = 500; 
     float time = 0f;
     Vector3[] initPos;
     Vector3[] startPosition, endPosition;
@@ -30,15 +30,18 @@ public class Lerp0 : MonoBehaviour
         // Define target positions. Start = random, End = heart 
         for (int i =0; i < numSphere; i++){
             // Random start positions
-            float r = 10f;
+            float r = 15f;
             startPosition[i] = new Vector3(r * Random.Range(-1f, 1f), r * Random.Range(-1f, 1f), r * Random.Range(-1f, 1f));        
-
-            r = 3f; // radius of the circle
-            // Circular end position
-            endPosition[i] = new Vector3(r * Mathf.Sin(i * 2 * Mathf.PI / numSphere), r * Mathf.Cos(i * 2 * Mathf.PI / numSphere));
+            // Heart shape end position
+            t = i* 2 * Mathf.PI / numSphere;
+            endPosition[i] = new Vector3( 
+                        5f*Mathf.Sqrt(2f) * Mathf.Sin(t) *  Mathf.Sin(t) *  Mathf.Sin(t),
+                        5f* (- Mathf.Cos(t) * Mathf.Cos(t) * Mathf.Cos(t) - Mathf.Cos(t) * Mathf.Cos(t) + 2 *Mathf.Cos(t)) + 3f,
+                        10f + Mathf.Sin(time));
         }
         // Let there be spheres..
         for (int i =0; i < numSphere; i++){
+            float r = 10f; // radius of the circle
             // Draw primitive elements:
             // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/GameObject.CreatePrimitive.html
             spheres[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere); 
@@ -71,7 +74,7 @@ public class Lerp0 : MonoBehaviour
             // lerpFraction variable defines the point between startPosition and endPosition (0~1)
             // let it oscillate over time using sin function
             lerpFraction = Mathf.Sin(time) * 0.5f + 0.5f;
-            Debug.Log(lerpFraction);
+
             // Lerp logic. Update position       
             t = i* 2 * Mathf.PI / numSphere;
             spheres[i].transform.position = Vector3.Lerp(startPosition[i], endPosition[i], lerpFraction);
