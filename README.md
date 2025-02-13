@@ -1,9 +1,7 @@
 # IMDM190 Heart Assignment
 
 
-![Image](https://github.com/user-attachments/assets/beb31fbc-917e-4947-a89f-dae36b7117b8)
 
-
-![Image](https://github.com/user-attachments/assets/f87d2363-e407-446d-8f07-2ec38f17a7c2)
-
-<img width="687" alt="Image" src="https://github.com/user-attachments/assets/0bff3e48-aabb-417d-9478-24b569e4806b" />
+![Screenshot 2025-02-12 at 9 51 48 PM](https://github.com/user-attachments/assets/cd2b1f19-3432-424c-b657-bd460f1e9901)
+![Screenshot 2025-02-12 at 9 51 38 PM](https://github.com/user-attachments/assets/1783e19d-4701-43de-9912-38e3d2946ba1)
+![Screenshot 2025-02-12 at 9 51 22 PM](https://github.com/user-attachments/assets/e2ae09c7-e0fa-4b94-af9d-293b5e8bb107)
