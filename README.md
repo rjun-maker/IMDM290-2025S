@@ -2,3 +2,4 @@
 
 Photos:
 
+<img src="images/github-small.png>
